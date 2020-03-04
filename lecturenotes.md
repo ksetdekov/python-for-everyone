@@ -13,3 +13,9 @@ cant have variables with this:
 ### python script!
 
 Do not type to much into console.
+
+### constants
+* cant use reserved words as var names
+* start with a letter or underscore
+* consist of letters, numbers and underscores
+* case sensitive
