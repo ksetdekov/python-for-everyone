@@ -45,6 +45,8 @@ type("text")
 
 **Do not use float for money!**
 
+In Python 2 integer division was integer, not float and left only the integer part.
+
 ### user input
 `input` returns a string
 
