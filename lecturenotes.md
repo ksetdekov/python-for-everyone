@@ -19,3 +19,32 @@ Do not type to much into console.
 * start with a letter or underscore
 * consist of letters, numbers and underscores
 * case sensitive
+
+## expression
+* `**` power
+* `%` remainder
+
+**Order**:
+1. parenthesis
+2. power
+3. multiplication
+4. addition 
+5. left to right
+
+Variables, literals and constants have a type.
+
+`+` adds numbers and concatenates for string
+
+```
+type(1)
+<class 'int'>
+
+type("text")
+<class 'str'>
+```
+
+**Do not use float for money!**
+
+### user input
+`input` returns a string
+
