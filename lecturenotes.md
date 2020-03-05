@@ -50,3 +50,6 @@ In Python 2 integer division was integer, not float and left only the integer pa
 ### user input
 `input` returns a string
 
+# week 5
+## conditional statements
+indent by 4 spaces
