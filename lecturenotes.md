@@ -53,3 +53,16 @@ In Python 2 integer division was integer, not float and left only the integer pa
 # week 5
 ## conditional statements
 indent by 4 spaces
+indenting is **required**
+turn of tabs
+### comparison operators
+```
+!= не 
+== равно
+```
+
+### try except structure (catch traceback)
+if try works - except is skipped
+
+if try fails - jump to the except section
+
