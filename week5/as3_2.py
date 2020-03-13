@@ -6,8 +6,14 @@ try:
 except ValueError:
     print("enter numeric input")
     quit()
-if h > 40:
-    pay = 40 * w + (h - 40) * 1.5 * w
-else:
-    pay = w * h
-print(pay)
+
+
+def computepay(hours, wage):
+    if hours > 40:
+        pay = 40 * wage + (hours - 40) * 1.5 * wage
+    else:
+        pay = wage * hours
+    return pay
+
+
+print(computepay(h, w))

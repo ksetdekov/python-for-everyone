@@ -11,18 +11,23 @@ except ValueError:
     print("enter numeric input")
     quit()
 
-if (sf > 1.0) | (sf < 0):
-    print("score out of bounds")
-    quit()
-else:
-    if sf >= 0.8:
-        if sf >= 0.9:
-            print("A")
-        else:
-            print("B")
-    elif sf >= 0.7:
-        print("C")
-    elif sf >= 0.6:
-        print("D")
+
+def computegrade(stringgrade):
+    if (stringgrade > 1.0) | (stringgrade < 0):
+        print("score out of bounds")
+        quit()
     else:
-        print("F")
+        if stringgrade >= 0.8:
+            if stringgrade >= 0.9:
+                return "A"
+            else:
+                return "B"
+        elif stringgrade >= 0.7:
+            return "C"
+        elif stringgrade >= 0.6:
+            return "D"
+        else:
+            return "F"
+
+
+print(computegrade(sf))
