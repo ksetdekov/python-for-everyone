@@ -88,3 +88,40 @@ ival = int(sval)
 print(type(ival))
 print(ival+1)
 ```
+
+**using return**
+
+```python
+def greet(lang):
+    if lang == "es":
+        return "hola"
+    elif lang == "fr":
+        return "bonjour"
+    else:
+        return "hello"
+
+
+greet('es')
+
+
+# using return
+def greeter():
+    return "hello"
+
+
+print(greeter(), "Kirill")
+print(greet("es"), "Chuck")
+```
+
+**multi params**
+
+```python
+def addtwo(a, b):
+    return a + b
+
+
+x = addtwo(3, 6)
+print(x)
+```
+
+**multiple runs**
