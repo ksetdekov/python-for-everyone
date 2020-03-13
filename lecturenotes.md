@@ -66,3 +66,25 @@ if try works - except is skipped
 
 if try fails - jump to the except section
 
+# week 6
+
+**store and reuse**
+
+def.
+
+```python
+def thing():
+    print("hello")
+    print("fun")
+
+thing()
+```
+
+STRING CONVERSIONS
+
+```python
+sval = "123"
+ival = int(sval)
+print(type(ival))
+print(ival+1)
+```
