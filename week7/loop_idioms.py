@@ -5,6 +5,7 @@ for the_num in [9, 41, 12, 3, 74, 15]:
         largest_so_far = the_num
     print(largest_so_far, the_num)
 print("after", largest_so_far)
+print("max", max([9, 41, 12, 3, 74, 15]))
 
 # counting
 zork = 0
@@ -13,6 +14,7 @@ for thing in [9, 41, 12, 3, 74, 15]:
     zork = zork + 1
     print(zork, thing)
 print("after", zork)
+print("length", len([9, 41, 12, 3, 74, 15]))
 
 # sum
 zork = 0
@@ -21,6 +23,7 @@ for thing in [9, 41, 12, 3, 74, 15]:
     zork = zork + thing
     print(zork, thing)
 print("after", zork)
+print("sum", sum([9, 41, 12, 3, 74, 15]))
 
 # filter
 print("before")
@@ -51,3 +54,4 @@ for the_num in search_list:
         smallest_so_far = the_num
     print(smallest_so_far, the_num)
 print("after", smallest_so_far)
+print("min", min([9, 41, 12, 3, 74, 15]))
