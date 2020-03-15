@@ -125,3 +125,28 @@ print(x)
 ```
 
 **multiple runs**
+
+# week 7 Using loops and iterations
+## breaking out of loop
+
+this is using `break`
+```python
+while True:
+    line = input("> ")
+    if line == "done":
+        break
+    print(line)
+print("done")
+```
+
+finishing iteration
+```python
+while True:
+    line = input("> ")
+    if line[0] == "#":
+        continue
+    if line == "done":
+        break
+    print(line)
+print("done")
+```
