@@ -24,3 +24,13 @@ while True:
         break
     print(line)
 print("done")
+
+# for loop
+for i in [5, 4, 3, 2, 1]:
+    print(i)
+print("blastoff")
+
+friends = ["jo", "glen", "sally"]
+for friend in friends:
+    print("happy new year:", friend)
+print("done!")

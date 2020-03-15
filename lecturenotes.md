@@ -150,3 +150,10 @@ while True:
     print(line)
 print("done")
 ```
+
+## definite loop
+```python
+for i in [5, 4, 3, 2, 1]:
+    print(i)
+print("blastoff")
+```
