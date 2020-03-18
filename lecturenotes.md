@@ -229,3 +229,33 @@ print("after", smallest_so_far)
 * the same as
 * similar but stronger than `==`
 * `is not` is an inversion
+
+# python data structures
+## strings
+### looking inside strings
+```python
+fruit = "banana"
+print(fruit[10])
+```
+we get `IndexError`
+
+can have better loops over strings
+```python
+fruit = "banana"
+for letters in fruit:
+    print(letters)
+```
+
+### slicing strings
+```python
+s = "Monty Python"
+print(s[0:4])
+# output Mont
+```
+Не ужно указывать оба конца
+```python
+s = "Monty Python"
+print(s[:2])
+print(s[8:])
+print(s[:])
+```
