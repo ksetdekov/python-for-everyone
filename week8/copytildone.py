@@ -1,6 +1,6 @@
 while True:
     line = input('> ')
-    if line[0] == '#':
+    if len(line) > 0 and line[0] == '#':
         continue
     if line == 'done':
         break
