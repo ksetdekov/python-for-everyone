@@ -88,6 +88,7 @@ print(greet)
 print('Hi there'.lower())
 
 stuff = 'hello world'
+print('J' + stuff[1:])
 print(type(stuff))
 print(dir(stuff))
 
