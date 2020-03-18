@@ -259,3 +259,13 @@ print(s[:2])
 print(s[8:])
 print(s[:])
 ```
+Можно проверять наличие через `in`
+```python
+fruit = "banana"
+if 'nan' in fruit:
+    print("found \"nan\"")
+```
+
+### format operator
+The format operator, `%` allows us to construct strings, replacing parts of the strings with the data stored in variables. 
+When applied to integers, `%` is the modulus operator. But when the first operand is a string, `%` is the format operator.`%`
