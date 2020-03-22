@@ -269,3 +269,29 @@ if 'nan' in fruit:
 ### format operator
 The format operator, `%` allows us to construct strings, replacing parts of the strings with the data stored in variables. 
 When applied to integers, `%` is the modulus operator. But when the first operand is a string, `%` is the format operator.`%`
+
+# week 9, files
+## opening and reading them
+
+**fhandle**
+```python
+fhandle = open('week9/mbox.txt')
+print(fhandle)
+```
+
+**iterating over lines**
+```python
+fhandle = open('week9/mbox.txt')
+count = 0
+for cheese in fhandle:
+    print(cheese)
+    count = count + 1
+```
+
+**useful  to strip new line character**
+```python
+fhand = open('week9/mbox.txt')
+for line in fhand:
+    line = line.rstrip()
+    print(line)
+```
