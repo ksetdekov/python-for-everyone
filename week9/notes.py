@@ -15,6 +15,11 @@ inp = fhand.read()
 print('all characters', len(inp))
 print(inp[:20])
 
+# read exhausts
+fhand = open('mbox.txt')
+print(len(fhand.read()))
+print(len(fhand.read()))
+
 # searching
 fromcount = 0
 fhand = open('mbox.txt')
@@ -39,15 +44,3 @@ for line in fhand:
     if '@uct.ac.za' not in line:
         continue
     print(line)
-
-fname = input('Enter the file name: ')
-try:
-    fhand = open(fname)
-except FileNotFoundError:
-    print('file cannot be opened', fname)
-    quit()
-count = 0
-for line in fhand:
-    if line.startswith('Subject:'):
-        count = count + 1
-print('Threre were', count, 'subject lines in', fname)
