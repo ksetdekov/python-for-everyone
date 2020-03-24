@@ -55,3 +55,27 @@ print(max(lotto))
 print(min(lotto))
 print(sum(lotto))
 print(sum(lotto) / len(lotto))
+
+# splitting strings
+abc = 'with three words'
+stuff = abc.split()
+print(stuff)
+print(len(stuff))
+for w in stuff:
+    print(w)
+
+line = 'a lot               of spaces    '
+etc = line.split()
+print(etc)
+
+line = 'first;secont;third;'
+# specify delimiter
+thing = line.split(';')
+print(len(thing))
+
+# double split pattern
+line = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+words = line.split()
+email = words[1]
+pieces = email.split('@')
+print(pieces[1])

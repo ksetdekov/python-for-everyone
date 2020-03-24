@@ -1,4 +1,4 @@
-fhandle = open("mbox.txt", 'r')
+fhandle = open("../files/mbox.txt", 'r')
 print(fhandle)
 stuff = 'hello\nWorld!'
 print(stuff)
