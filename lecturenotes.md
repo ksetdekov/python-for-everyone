@@ -279,3 +279,24 @@ print(s)
 print(repr(s))
 # '1 2\t 3\n 4'
 ```
+# week 10 lists
+algorithms 
+* set of rules
+
+data structures
+* way to organize data in a computer
+
+**list is a kind of a collection**
+```python
+friends = ['kevin', 'mike']
+list_of_lists = [1,[5,6],10]
+emptylist = []
+for i in list_of_lists:
+    print(i)
+# 1
+# [5, 6]
+# 10
+```
+
+**lists are mutable, can be changed**
+
