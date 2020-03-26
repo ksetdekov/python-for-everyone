@@ -1,5 +1,4 @@
-max_num = None
-min_num = None
+numbers = list()
 while True:
     line = input("enter number :")
     if line == "done":
@@ -9,12 +8,12 @@ while True:
     except ValueError:
         print("Invalid input")
         continue
-    if max_num is None:
-        max_num = num
-        min_num = num
-    elif num > max_num:
-        max_num = num
-    elif num < min_num:
-        min_num = num
+    numbers.append(num)
+try:
+    max_num = max(numbers)
+    min_num = min(numbers)
+except ValueError:
+    max_num = None
+    min_num = None
 print("Maximum is", max_num)
 print("Minimum is", min_num)
