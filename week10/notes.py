@@ -79,3 +79,12 @@ words = line.split()
 email = words[1]
 pieces = email.split('@')
 print(pieces[1])
+
+
+def delete_head(t):
+    del t[0]
+
+
+letters = ['a', 'b', 'c']
+delete_head(letters)
+print(letters)

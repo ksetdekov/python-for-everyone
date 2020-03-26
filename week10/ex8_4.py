@@ -11,4 +11,5 @@ for line in fh:
     for word in line_words:
         if word not in lst:
             lst.append(word)
-print(sorted(lst))
+lst.sort()
+print(lst)
