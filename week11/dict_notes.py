@@ -6,4 +6,3 @@ print(purse)
 print(purse['candy'])
 purse['candy'] = purse['candy'] + 3
 print(purse)
-
