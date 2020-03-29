@@ -269,6 +269,35 @@ if 'nan' in fruit:
 ### format operator
 The format operator, `%` allows us to construct strings, replacing parts of the strings with the data stored in variables. 
 When applied to integers, `%` is the modulus operator. But when the first operand is a string, `%` is the format operator.`%`
+### showing what is in a line
+```python
+s = '1 2\t 3\n 4'
+print(s)
+# 1 2	 3
+#  4
+print(repr(s))
+# '1 2\t 3\n 4'
+```
+# week 10 lists
+algorithms 
+* set of rules
+
+data structures
+* way to organize data in a computer
+
+**list is a kind of a collection**
+```python
+friends = ['kevin', 'mike']
+list_of_lists = [1,[5,6],10]
+emptylist = []
+for i in list_of_lists:
+    print(i)
+# 1
+# [5, 6]
+# 10
+```
+
+**lists are mutable, can be changed**
 
 # week 9, files
 ## opening and reading them
