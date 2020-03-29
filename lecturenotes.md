@@ -324,3 +324,12 @@ for line in fhand:
     line = line.rstrip()
     print(line)
 ```
+
+# week 11 dictionaries
+type of a collection (many things in one)
+
+dictionary is an an associative array
+* no order
+* have index
+* use keys instead of location (in lists)
+* shown  in {}
