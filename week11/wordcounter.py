@@ -1,12 +1,18 @@
-counts = dict()
-print('enter a line of text')
-line = input('')
-words = line.split()
-print('words', words)
-print('counting')
-for word in words:
-    counts[word] = counts.get(word, 0) + 1
-print('counts', counts)
+name = input('enter file')
+handle = open(name)
 
-for count in counts:
-    print(count, counts[count])
+counts = dict()
+for line in handle:
+    words = line.split()
+    for word in words:
+        counts[word] = counts.get(word, 0) + 1
+handle.close()
+
+bigcount = None
+bigword = None
+for wrd, cnt in counts.items():
+    if bigcount is None or cnt > bigcount:
+        bigword = wrd
+        bigcount = cnt
+
+print('most used word', bigword, 'used', bigcount, 'times')
