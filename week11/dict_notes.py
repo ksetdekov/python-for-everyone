@@ -6,3 +6,11 @@ print(purse)
 print(purse['candy'])
 purse['candy'] = purse['candy'] + 3
 print(purse)
+
+purse = {'money': 112, 'candy': 6, 'tissues': 75}
+print(list(purse))
+print(purse.keys())
+print(purse.values())
+
+for k, v in purse.items():
+    print(k, v)

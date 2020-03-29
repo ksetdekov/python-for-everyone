@@ -333,3 +333,15 @@ dictionary is an an associative array
 * have index
 * use keys instead of location (in lists)
 * shown  in {}
+
+** can loop over 2 iteration variables at a time*
+```python
+purse = {'money': 112, 'candy': 6, 'tissues': 75}
+
+for a, b in purse.items():
+    print(a, b)
+
+# money 112
+# candy 6
+# tissues 75
+```
