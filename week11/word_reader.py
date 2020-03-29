@@ -7,7 +7,7 @@ for line in handle:
     words = line.split()
     for word in words:
         counts[word] = counts.get(word, i)
-        i = i + 1
+        i += 1
 handle.close()
 print(counts)
 
