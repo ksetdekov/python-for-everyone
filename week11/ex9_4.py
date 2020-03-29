@@ -1,5 +1,3 @@
-import operator
-
 name = input("Enter file:")
 if len(name) < 1:
     name = "../files/mbox-short.txt"
@@ -16,5 +14,10 @@ for line in fh:
         counts[sender] = counts.get(sender, 0) + 1
 
 fh.close()
-highest = max(counts.items(), key=operator.itemgetter(1))[0]
+highest = None
+bigcount = None
+for k, v in counts.items():
+    if highest is None or v > bigcount:
+        highest = k
+        bigcount = v
 print(highest, counts[highest])
