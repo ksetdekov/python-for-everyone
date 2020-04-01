@@ -345,3 +345,17 @@ for a, b in purse.items():
 # candy 6
 # tissues 75
 ```
+
+# tuples are like lists
+
+like a list with index starting at 0
+
+Tuples are "immutable"
+Lists and tuples are immutable. Lists are.
+ 
+Can do much less
+ ```python
+t = tuple()
+print(dir(t))
+# count and index
+```
