@@ -44,3 +44,24 @@ for k, v in s.items():
 print(tmp)
 tmp = sorted(tmp, reverse=True)
 print(tmp)
+
+t = ('A',) + x[1:]
+print(t)  # replace 1 tuple with other
+
+# switch variable content
+a = 5
+b = 'John'
+a, b = b, a
+print(a, b)
+adr = 'test@email.com'
+uname, domanain = adr.split('@')
+print(uname)
+print(domanain)
+
+# composite keys
+directory = dict()
+
+directory['last', 'first'] = 100
+directory['setdekov', 'john'] = 123213
+for last, first in directory:
+    print(first, last, directory[last, first])
