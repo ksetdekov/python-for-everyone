@@ -359,3 +359,11 @@ t = tuple()
 print(dir(t))
 # count and index
 ```
+
+## list comprehension
+```python
+# list comprehension
+purse = {'money': 112, 'candy': 6, 'tissues': 75}
+print(sorted([(v, k) for k, v in purse.items()], reverse=True)[:10])
+```
+works in a way, like we had `for all members in a dict, create a tuple `

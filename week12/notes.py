@@ -38,9 +38,9 @@ for k, v in sorted(s.items()):
     print(k, v)
 
 # sort by value
-tmp = list()
+tmp = list()  # list
 for k, v in s.items():
-    tmp.append((v, k))
+    tmp.append((v, k))  # list of tuples
 print(tmp)
 tmp = sorted(tmp, reverse=True)
 print(tmp)
