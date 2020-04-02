@@ -14,10 +14,12 @@ for line in fh:
         counts[sender] = counts.get(sender, 0) + 1
 
 fh.close()
-highest = None
-bigcount = None
+
+PeopleList = list()
 for k, v in counts.items():
-    if highest is None or v > bigcount:
-        highest = k
-        bigcount = v
-print(highest, counts[highest])
+    newtup = (v, k)
+    PeopleList.append(newtup)
+
+PeopleList = sorted(PeopleList, reverse=True)
+for val, key in PeopleList[:10]:
+    print(key, val)
