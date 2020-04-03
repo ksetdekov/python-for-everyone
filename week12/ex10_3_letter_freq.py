@@ -17,4 +17,6 @@ for line in fhand:
             counts[letter] = counts.get(letter, 0) + 1
 # list comprehension
 fhand.close()
-print(sorted([(v, k) for k, v in counts.items()], reverse=True)[:10])
+LetterHist = sorted([(v, k) for k, v in counts.items()], reverse=True)
+for k, v in LetterHist:
+    print(v, k)
