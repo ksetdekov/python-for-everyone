@@ -367,3 +367,11 @@ purse = {'money': 112, 'candy': 6, 'tissues': 75}
 print(sorted([(v, k) for k, v in purse.items()], reverse=True)[:10])
 ```
 works in a way, like we had `for all members in a dict, create a tuple `
+
+# regular expressions
+
+
+<img src="https://imgs.xkcd.com/comics/regular_expressions.png"
+     alt="Regular_expression, https://xkcd.com/208/ "
+     style="float: left; margin-right: 10px;" />
+     
