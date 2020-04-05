@@ -392,4 +392,35 @@ $        Matches the end of the line
 [a-z0-9] The set of characters can include a range
 (        Indicates where string extraction is to start
 )        Indicates where string extraction is to end
+[^ ]     Match non-blank character, ^ is like not
+```
+
+##  matching and extracting data
+`re.search()` - T/F, 
+`re.findall()` - get the string
+
+```python
+import re
+x = 'My 2 favorite numbers are 19 and 42'
+y = re.findall('[0-9]+', x)
+print(y)  # get all matching stings in a list
+```
+
+## warning: greedy matching
+\* and + push outward both direction to find the biggest match
+
+## non-greedy matching (shortest)
+```python
+import re
+x = 'From: Using the : chareacter'
+y = re.findall('^F.+?:', x)
+print(y)
+```
+
+## extract only part in ()
+```python
+import re
+stringtest = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
+y = re.findall('^From (\S+@\S+)', stringtest)  # match all regex, but extract ()
+print(y)
 ```
