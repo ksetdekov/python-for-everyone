@@ -1,3 +1,5 @@
+import re
+
 name = input("Enter file:")
 if len(name) < 1:
     name = "../files/mbox-short.txt"
@@ -6,11 +8,10 @@ fh = open(name)
 count = 0
 counts = dict()
 for line in fh:
-    if not line.startswith("From "):
-        continue
-    line_words = line.rstrip().split()
-    if line_words[0] == 'From':
-        time = (line_words[5])[:2]
+    line = line.rstrip()
+    time = re.findall('^From .* ([0-9][0-9]):', line)
+    if len(time) > 0:
+        time = time[0]
         counts[time] = counts.get(time, 0) + 1
 
 fh.close()
