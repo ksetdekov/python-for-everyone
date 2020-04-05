@@ -72,3 +72,8 @@ print(y)
 stringtest = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
 y = re.findall('^From .*@([^ ]*)', stringtest)
 print(y)
+
+x = 'we just got $10.123 and $0.001 for food'
+y = re.findall('\$[0-9.]+', x)
+print(y)
+# ['$10.123', '$0.001']

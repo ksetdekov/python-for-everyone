@@ -393,6 +393,7 @@ $        Matches the end of the line
 (        Indicates where string extraction is to start
 )        Indicates where string extraction is to end
 [^ ]     Match non-blank character, ^ is like not
+\        Escape character
 ```
 
 ##  matching and extracting data
@@ -423,4 +424,13 @@ import re
 stringtest = 'From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008'
 y = re.findall('^From (\S+@\S+)', stringtest)  # match all regex, but extract ()
 print(y)
+```
+
+### using escape to match tech characters
+```python
+import re
+x = 'we just got $10.123 and $0.001 for food'
+y = re.findall('\$[0-9.]+', x)
+print(y)
+# ['$10.123', '$0.001']
 ```
