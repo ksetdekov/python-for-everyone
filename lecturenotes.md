@@ -377,6 +377,8 @@ works in a way, like we had `for all members in a dict, create a tuple `
 
 ### Python Regular Expression Quick Guide
 https://www.py4e.com/lectures3/Pythonlearn-11-Regex-Handout.txt
+
+howto for python https://docs.python.org/3/howto/regex.html
 ```
 ^        Matches the beginning of a line
 $        Matches the end of the line
