@@ -128,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /week9/result.txt
+/week14/stuff.jpg
