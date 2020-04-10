@@ -1,6 +1,14 @@
 import urllib.request
 
-img = urllib.request.urlopen('http://data.pr4e.org/cover3.jpg').read()
+img = urllib.request.urlopen('http://data.pr4e.org/cover3.jpg')
 fhand = open('cover3.jpg', 'wb')
-fhand.write(img)
+size = 0
+while True:
+    info = img.read(100000)
+    if len(info) < 1:
+        break
+    size += len(info)
+    fhand.write(info)
+
+print(size, 'character copied.')
 fhand.close()
