@@ -436,3 +436,8 @@ y = re.findall('\$[0-9.]+', x)
 print(y)
 # ['$10.123', '$0.001']
 ```
+
+# web data week 4
+UTF-8 has 1 to 4 byte in character representation
+
+Python 3 - all strings in Unicode
