@@ -441,3 +441,8 @@ print(y)
 UTF-8 has 1 to 4 byte in character representation
 
 Python 3 - all strings in Unicode
+
+# scraping web pages
+web page scraping
+
+**Beautiful soup** - good solution
