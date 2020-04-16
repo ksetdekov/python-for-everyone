@@ -450,3 +450,15 @@ web page scraping
 # data on the web
 XML and JSON - formats for data between applications
 these are serialization formats for data transmission
+
+serialization / de-serialization - converting data in one program into a common format tat can be stored and/or 
+transmitted between systems in a programming language-independent manner
+
+
+## xml basics
+
+* start tag
+* end tag
+* text content
+* attributes - always on start tag. key-value pair
+* self closing tags
