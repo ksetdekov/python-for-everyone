@@ -446,3 +446,7 @@ Python 3 - all strings in Unicode
 web page scraping
 
 **Beautiful soup** - good solution
+
+# data on the web
+XML and JSON - formats for data between applications
+these are serialization formats for data transmission
