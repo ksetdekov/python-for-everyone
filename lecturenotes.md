@@ -462,3 +462,6 @@ transmitted between systems in a programming language-independent manner
 * text content
 * attributes - always on start tag. key-value pair
 * self closing tags
+
+## XML schema
+XML document + XML Schema Contract - sent to XML Validator for Validation
