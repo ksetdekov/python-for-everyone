@@ -4,7 +4,6 @@ stuff = 'hello\nWorld!'
 print(stuff)
 len(stuff)
 
-
 # using repr
 s = '1 2\t 3\n 4'
 print(s)
