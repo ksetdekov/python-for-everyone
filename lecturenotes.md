@@ -470,3 +470,29 @@ XML document + XML Schema Contract - sent to XML Validator for Validation
 XML still used - JSON  is very popular.
 
 JSON - data as nested "lists" and "dictionaries"
+
+# object oriented programming
+
+object - bit of self-contained Code and Data
+
+## definitions
+
+* **class** - template
+* **method** or message - a defined capability of a class
+* **field** or attribute - a bit of data in a class
+* **object** or Instance - a particular instance of a class
+
+Class - template for making things
+Instance - this is a particular object (real things)
+Method - defined in a class, part of an object
+
+```python
+x = 'abc'
+type(x)
+type(2.4)
+type(2)
+z = list()
+type(z)
+y = dict()
+type(y)
+```
