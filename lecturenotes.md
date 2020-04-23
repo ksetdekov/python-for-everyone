@@ -502,3 +502,6 @@ type(y)
 * created use and discarded
 * constructor - moment of creation - used a lot
 * destructor - moment of destruction
+
+## inheretence
+parent class - then we create a child class that inherits a parent class attributes
