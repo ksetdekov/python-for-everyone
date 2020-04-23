@@ -526,4 +526,7 @@ https://en.wikipedia.org/wiki/Relational_database
     * insert data
     * **U**pdate
     * **D**elete data
-    
+
+<img src="files/DB structure.PNG"
+     alt="DB structure"
+     style="float: left; margin-right: 10px;" />
