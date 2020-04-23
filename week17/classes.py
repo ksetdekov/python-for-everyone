@@ -1,18 +1,19 @@
 class PartyAnimal:
     x = 0
 
-    def __init__(self):
+    def __init__(self, z):
+        self.name = z
         print('I am constructed')  # constructor
 
     def party(self):
         self.x += 1
-        print('So far', self.x)
+        print(self.name, 'party count', self.x)
 
     def __del__(self):
         print('I am desctructed', self.x)  # desctructor
 
 
-an = PartyAnimal()  # moment of contruction
+an = PartyAnimal('empty')  # moment of contruction
 
 an.party()
 an.party()
@@ -22,3 +23,10 @@ print('an contains', an)
 
 print('type', type(an))
 print('Dir', dir(an))
+
+s = PartyAnimal('Sally')
+s.party()
+
+j = PartyAnimal('Jim')
+j.party()
+s.party()
