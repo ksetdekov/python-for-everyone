@@ -496,3 +496,9 @@ type(z)
 y = dict()
 type(y)
 ```
+
+## object life cycle
+
+* created use and discarded
+* constructor - moment of creation - used a lot
+* destructor - moment of destruction
