@@ -505,3 +505,25 @@ type(y)
 
 ## inheretence
 parent class - then we create a child class that inherits a parent class attributes
+
+
+# relational databases
+
+https://www.sqlitebrowser.org
+
+https://en.wikipedia.org/wiki/Relational_database
+
+## terminilogy
+* database - contains tables
+* relation (table) - contains tuples and attributes
+* tuple (row) - set of fields that generally represent an "object"
+* attributes (columns, fields) - one of the many elements of data corresponding to the object represented by the row
+
+## SQL
+* **Structured Query Language** - language we use to issue commands to the database
+    * **C**reate a table
+    * **R**etrieve data
+    * insert data
+    * **U**pdate
+    * **D**elete data
+    
