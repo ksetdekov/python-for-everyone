@@ -6,8 +6,11 @@ class PartyAnimal:
         print('So far', self.x)
 
 
-an = PartyAnimal()
+an = PartyAnimal()  # moment of contruction
 
 an.party()
 an.party()
 an.party()
+
+print('type', type(an))
+print('Dir', dir(an))
