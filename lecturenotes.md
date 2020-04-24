@@ -530,3 +530,41 @@ https://en.wikipedia.org/wiki/Relational_database
 <img src="files/DB structure.PNG"
      alt="DB structure"
      style="float: left; margin-right: 10px;" />
+     
+ ### First DB
+
+```iso92-sql
+CREATE TABLE Users(
+	name VARCHAR(128),
+	email VARCHAR(128)
+)
+```
+
+#### SQL Insert
+```iso92-sql
+INSERT INTO Users (name, email) VALUES ('Kristin', 'kf@umich.edu')
+```
+
+#### Delete row
+```iso92-sql
+DELETE FROM Users WHERE email='ted@umich.edu'
+```
+
+#### Update
+```iso92-sql
+UPDATE Users SET name='Charles' WHERE email='csev@umich.edu'
+```
+
+#### Select
+```iso92-sql
+SELECT * FROM Users
+```
+```iso92-sql
+SELECT * FROM Users WHERE email='csev@umich.edu'
+```
+
+#### Sort
+```iso92-sql
+SELECT * FROM Users ORDER BY email
+SELECT * FROM Users ORDER BY name
+```
