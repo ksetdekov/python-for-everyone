@@ -27,7 +27,7 @@ for line in fh:
         cur.execute('UPDATE Counts SET count = count + 1 WHERE email = ?', (email,))
     conn.commit()  # commit is the slowest part
 
-sqlstr = 'SELECT email, count FROM COunts ORDER BY count DESC LIMIT 10'
+sqlstr = 'SELECT email, count FROM Counts ORDER BY count DESC LIMIT 10'
 
 for row in cur.execute(sqlstr):
     print(str(row[0]), row[1])
