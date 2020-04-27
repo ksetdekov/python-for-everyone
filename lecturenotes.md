@@ -568,3 +568,47 @@ SELECT * FROM Users WHERE email='csev@umich.edu'
 SELECT * FROM Users ORDER BY email
 SELECT * FROM Users ORDER BY name
 ```
+
+# week 19 data models
+## Designing a data model
+
+* draw a picture of data objects for your application, figure out how to represent them as objects and relations
+* basic rule = don't put same string twice - use a relationship instead
+* when there is one thing in the real world, there should be one copy of that thing in the DB
+
+### Let's build music library app
+**is it an object or an attribute of a thing?**
+* where to start? - what is the most important thing of the app
+    * track - this is a track management app
+    
+* identify keys
+    * primary key - id of the rows in a table
+    * logical key - mark a column, that might be used for retrieval (name)
+    * foreign key - album_id in a table of tracks (origin of an arrow from track table)
+
+Work from outside in
+ 
+```iso92-sql
+CREATE TABLE "Artist" (
+	"id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"Name"	TEXT
+)
+
+CREATE TABLE "Genre" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, 
+    "name" TEXT)
+
+CREATE TABLE "Album" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, 
+    artist_id INTEGER,
+    "title" TEXT)
+
+CREATE TABLE "Track" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, 
+    album_id INTEGER,
+    genre_id INTEGER,
+    len INTEGER,
+    rating INTEGER,
+    "title" TEXT,
+    "count" INTEGER)
+```
