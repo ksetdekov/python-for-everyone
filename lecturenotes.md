@@ -638,3 +638,42 @@ INSERT INTO Track (title, rating, len, count, album_id, genre_id)
 INSERT INTO Track (title, rating, len, count, album_id, genre_id) 
     VALUES ('Who Made Who', 5, 207, 0, 1, 2) ;
 ```
+
+## Joining data
+
+```iso92-sql
+SELECT Album.title, Artist.name FROM Album JOIN Artist ON Album.artist_id = Artist.id
+```
+
+the source of the connection is:
+```iso92-sql
+SELECT Album.title, Album.artist_id, Artist.id, Artist.name FROM Album JOIN Artist ON Album.artist_id = Artist.id
+```
+
+title and genre
+```iso92-sql
+SELECT Track.title, Genre.name FROM Track JOIN Genre 
+    ON Track.genre_id = Genre.id
+```
+
+join without an on clause gives all possible combinations
+
+This give a Track, Artist, Album, Genre result
+```iso92-sql
+SELECT Track.title, Artist.name, Album.title, Genre.name 
+FROM Track JOIN Genre JOIN Album JOIN Artist 
+    ON Track.genre_id = Genre.id AND Track.album_id = Album.id 
+    AND Album.artist_id = Artist.id
+```
+
+### some useful SQL
+`INSERT OR REPLACE` - update if already there
+
+`INSERT OR IGNORE` - don't blow up
+
+retrieve data from tracks.py:
+```iso92-sql
+SELECT Track.title, Album.title, Artist.name 
+FROM Track JOIN Album JOIN Artist 
+on track.album_id = Album.id and Album.artist_id= Artist.id
+```
