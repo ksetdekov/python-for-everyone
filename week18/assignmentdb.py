@@ -10,10 +10,10 @@ DROP TABLE IF EXISTS Counts''')
 cur.execute('''
 CREATE TABLE Counts (org TEXT, count INTEGER)''')
 
-fname = input('Enter file name: ')
-if len(fname) < 1:
-    fname = '../files/mbox.txt'
-fh = open(fname)
+filename = input('Enter file name: ')
+if len(filename) < 1:
+    filename = '../files/mbox.txt'
+fh = open(filename)
 for line in fh:
     if not line.startswith('From: '):
         continue
