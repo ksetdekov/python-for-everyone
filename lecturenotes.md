@@ -717,3 +717,8 @@ CREATE TABLE Member (
     PRIMARY KEY (user_id, course_id)
 ) ;
 ```
+
+#### Using data from handouts:
+
+https://www.py4e.com/lectures3/Pythonlearn-15-Database-Handout.txt
+
