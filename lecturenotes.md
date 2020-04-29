@@ -677,3 +677,43 @@ SELECT Track.title, Album.title, Artist.name
 FROM Track JOIN Album JOIN Artist 
 on track.album_id = Album.id and Album.artist_id= Artist.id
 ```
+
+# Many to many realtionship
+
+* books and authors
+    * can have many books
+    * a book can have many authors
+
+**junction table** 
+
+* course table
+    * id
+    * title
+* user table
+    * id
+    * name
+    * email
+* member table
+    * user_id
+    * course_id
+    * role
+    
+```
+CREATE TABLE User (
+    id     INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    name   TEXT UNIQUE,
+    email  TEXT
+) ;
+
+CREATE TABLE Course (
+    id     INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    title  TEXT UNIQUE
+) ;
+
+CREATE TABLE Member (
+    user_id     INTEGER,
+    course_id   INTEGER,
+	role        INTEGER,
+    PRIMARY KEY (user_id, course_id)
+) ;
+```
