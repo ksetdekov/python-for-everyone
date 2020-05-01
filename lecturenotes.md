@@ -722,3 +722,18 @@ CREATE TABLE Member (
 
 https://www.py4e.com/lectures3/Pythonlearn-15-Database-Handout.txt
 
+# Multi-Step Data Analysis
+
+1. gather data from Data source to DB
+2. clean/Process (from DB to cleanDB)
+3. Vizualize
+4. Analyse
+
+This is more complex but not data mining yet.
+
+Read this for more:
+
+* hadoop
+* spark apache
+* redshift amazon
+* pentaho community
