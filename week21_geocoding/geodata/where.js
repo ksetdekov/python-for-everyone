@@ -295,5 +295,6 @@ myData = [
 [39.1974437,-96.5847249, 'Manhattan, KS 66506, USA'],
 [40.4454368,-3.7299424, 'Av. Séneca, 2, 28040 Madrid, Spain'],
 [38.28923,21.785369, 'Panepistimioupoli Patron 265 04, Greece'],
-[45.406766,11.8774462, 'Via 8 Febbraio 1848, 2, 35122 Padova PD, Italy']
+[45.406766,11.8774462, 'Via 8 Febbraio 1848, 2, 35122 Padova PD, Italy'],
+[51.1816299,71.4164224, 'Beibitshilik Street 49/A, Nur-Sultan 010000, Kazakhstan']
 ];
