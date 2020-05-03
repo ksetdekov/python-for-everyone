@@ -737,3 +737,9 @@ Read this for more:
 * spark apache
 * redshift amazon
 * pentaho community
+
+# pagerank running
+
+info on the origin of google **The Anatomy of a Large-Scale Hypertextual Web Search Engine**
+
+http://infolab.stanford.edu/~backrub/google.html
