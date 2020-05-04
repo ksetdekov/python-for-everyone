@@ -743,3 +743,12 @@ Read this for more:
 info on the origin of google **The Anatomy of a Large-Scale Hypertextual Web Search Engine**
 
 http://infolab.stanford.edu/~backrub/google.html
+
+1. spider.py - spider
+2. spider.sqlite - db
+3. spreset - clears data in 2.
+4. sprank - ranking algorithm on 2. data
+5. spdump - dumps content of 2.
+6. spjson - creates from 2. data for 7.
+7. force.js - vizualizes
+8. force.html - webpage with wiz
