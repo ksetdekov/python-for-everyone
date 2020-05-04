@@ -1,9 +1,9 @@
 import sqlite3
-import urllib.error
 import ssl
 from urllib.parse import urljoin
 from urllib.parse import urlparse
 from urllib.request import urlopen
+
 from bs4 import BeautifulSoup
 
 # Ignore SSL certificate errors
@@ -28,18 +28,20 @@ cur.execute('SELECT id,url FROM Pages WHERE html is NULL and error is NULL ORDER
 row = cur.fetchone()
 if row is not None:
     print("Restarting existing crawl.  Remove spider.sqlite to start a fresh crawl.")
-else :
+else:
     starturl = input('Enter web url or enter: ')
-    if ( len(starturl) < 1 ) : starturl = 'http://www.dr-chuck.com/'
-    if ( starturl.endswith('/') ) : starturl = starturl[:-1]
+    if len(starturl) < 1:
+        starturl = 'https://bikepost.ru/'
+    if starturl.endswith('/'):
+        starturl = starturl[:-1]
     web = starturl
-    if ( starturl.endswith('.htm') or starturl.endswith('.html') ) :
+    if starturl.endswith('.htm') or starturl.endswith('.html'):
         pos = starturl.rfind('/')
         web = starturl[:pos]
 
-    if ( len(web) > 1 ) :
-        cur.execute('INSERT OR IGNORE INTO Webs (url) VALUES ( ? )', ( web, ) )
-        cur.execute('INSERT OR IGNORE INTO Pages (url, html, new_rank) VALUES ( ?, NULL, 1.0 )', ( starturl, ) )
+    if len(web) > 1:
+        cur.execute('INSERT OR IGNORE INTO Webs (url) VALUES ( ? )', (web,))
+        cur.execute('INSERT OR IGNORE INTO Pages (url, html, new_rank) VALUES ( ?, NULL, 1.0 )', (starturl,))
         conn.commit()
 
 # Get the current webs
@@ -52,9 +54,10 @@ print(webs)
 
 many = 0
 while True:
-    if ( many < 1 ) :
+    if many < 1:
         sval = input('How many pages:')
-        if ( len(sval) < 1 ) : break
+        if len(sval) < 1:
+            break
         many = int(sval)
     many = many - 1
 
@@ -72,22 +75,22 @@ while True:
     print(fromid, url, end=' ')
 
     # If we are retrieving this page, there should be no links from it
-    cur.execute('DELETE from Links WHERE from_id=?', (fromid, ) )
+    cur.execute('DELETE from Links WHERE from_id=?', (fromid,))
     try:
         document = urlopen(url, context=ctx)
 
         html = document.read()
-        if document.getcode() != 200 :
-            print("Error on page: ",document.getcode())
-            cur.execute('UPDATE Pages SET error=? WHERE url=?', (document.getcode(), url) )
+        if document.getcode() != 200:
+            print("Error on page: ", document.getcode())
+            cur.execute('UPDATE Pages SET error=? WHERE url=?', (document.getcode(), url))
 
-        if 'text/html' != document.info().get_content_type() :
+        if 'text/html' != document.info().get_content_type():
             print("Ignore non text/html page")
-            cur.execute('DELETE FROM Pages WHERE url=?', ( url, ) )
+            cur.execute('DELETE FROM Pages WHERE url=?', (url,))
             conn.commit()
             continue
 
-        print('('+str(len(html))+')', end=' ')
+        print('(' + str(len(html)) + ')', end=' ')
 
         soup = BeautifulSoup(html, "html.parser")
     except KeyboardInterrupt:
@@ -96,12 +99,12 @@ while True:
         break
     except:
         print("Unable to retrieve or parse page")
-        cur.execute('UPDATE Pages SET error=-1 WHERE url=?', (url, ) )
+        cur.execute('UPDATE Pages SET error=-1 WHERE url=?', (url,))
         conn.commit()
         continue
 
-    cur.execute('INSERT OR IGNORE INTO Pages (url, html, new_rank) VALUES ( ?, NULL, 1.0 )', ( url, ) )
-    cur.execute('UPDATE Pages SET html=? WHERE url=?', (memoryview(html), url ) )
+    cur.execute('INSERT OR IGNORE INTO Pages (url, html, new_rank) VALUES ( ?, NULL, 1.0 )', (url,))
+    cur.execute('UPDATE Pages SET html=? WHERE url=?', (memoryview(html), url))
     conn.commit()
 
     # Retrieve all of the anchor tags
@@ -109,31 +112,37 @@ while True:
     count = 0
     for tag in tags:
         href = tag.get('href', None)
-        if ( href is None ) : continue
+        if href is None:
+            continue
         # Resolve relative references like href="/contact"
         up = urlparse(href)
-        if ( len(up.scheme) < 1 ) :
+        if len(up.scheme) < 1:
             href = urljoin(url, href)
         ipos = href.find('#')
-        if ( ipos > 1 ) : href = href[:ipos]
-        if ( href.endswith('.png') or href.endswith('.jpg') or href.endswith('.gif') ) : continue
-        if ( href.endswith('/') ) : href = href[:-1]
+        if ipos > 1:
+            href = href[:ipos]
+        if href.endswith('.png') or href.endswith('.jpg') or href.endswith('.gif'):
+            continue
+        if href.endswith('/'):
+            href = href[:-1]
         # print href
-        if ( len(href) < 1 ) : continue
+        if len(href) < 1:
+            continue
 
-		# Check if the URL is in any of the webs
+        # Check if the URL is in any of the webs
         found = False
         for web in webs:
-            if ( href.startswith(web) ) :
+            if href.startswith(web):
                 found = True
                 break
-        if not found : continue
+        if not found:
+            continue
 
-        cur.execute('INSERT OR IGNORE INTO Pages (url, html, new_rank) VALUES ( ?, NULL, 1.0 )', ( href, ) )
+        cur.execute('INSERT OR IGNORE INTO Pages (url, html, new_rank) VALUES ( ?, NULL, 1.0 )', (href,))
         count = count + 1
         conn.commit()
 
-        cur.execute('SELECT id FROM Pages WHERE url=? LIMIT 1', ( href, ))
+        cur.execute('SELECT id FROM Pages WHERE url=? LIMIT 1', (href,))
         try:
             row = cur.fetchone()
             toid = row[0]
@@ -141,8 +150,7 @@ while True:
             print('Could not retrieve id')
             continue
         # print fromid, toid
-        cur.execute('INSERT OR IGNORE INTO Links (from_id, to_id) VALUES ( ?, ? )', ( fromid, toid ) )
-
+        cur.execute('INSERT OR IGNORE INTO Links (from_id, to_id) VALUES ( ?, ? )', (fromid, toid))
 
     print(count)
 
