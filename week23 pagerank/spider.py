@@ -19,13 +19,13 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Pages
      error INTEGER, old_rank REAL, new_rank REAL)''')
 
 cur.execute('''CREATE TABLE IF NOT EXISTS Links
-    (from_id INTEGER, to_id INTEGER)''')
+    (from_id INTEGER, to_id INTEGER, UNIQUE(from_id, to_id))''')
 
 cur.execute('''CREATE TABLE IF NOT EXISTS Webs (url TEXT UNIQUE)''')
 
 # Check to see if we are already in progress...
 cur.execute('SELECT id,url FROM Pages WHERE html is NULL and error is NULL ORDER BY RANDOM() LIMIT 1')
-row = cur.fetchone()
+row = cur.fetchone()  # randomly pick
 if row is not None:
     print("Restarting existing crawl.  Remove spider.sqlite to start a fresh crawl.")
 else:
@@ -44,7 +44,7 @@ else:
         cur.execute('INSERT OR IGNORE INTO Pages (url, html, new_rank) VALUES ( ?, NULL, 1.0 )', (starturl,))
         conn.commit()
 
-# Get the current webs
+# Get the current webs - websites
 cur.execute('''SELECT url FROM Webs''')
 webs = list()
 for row in cur:
