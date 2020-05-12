@@ -1,8 +1,7 @@
-import sqlite3
-import time
 import re
+import sqlite3
 import zlib
-from datetime import datetime, timedelta
+from datetime import datetime
 
 # Not all systems have this
 try:
@@ -147,7 +146,7 @@ cur.execute('''DROP TABLE IF EXISTS Replies ''')
 cur.execute('''CREATE TABLE IF NOT EXISTS Messages
     (id INTEGER PRIMARY KEY, guid TEXT UNIQUE, sent_at INTEGER,
      sender_id INTEGER, subject_id INTEGER,
-     headers BLOB, body BLOB)''')
+     headers BLOB, body BLOB)''')  # blob = large object, will compress
 cur.execute('''CREATE TABLE IF NOT EXISTS Senders
     (id INTEGER PRIMARY KEY, sender TEXT UNIQUE)''')
 cur.execute('''CREATE TABLE IF NOT EXISTS Subjects
@@ -223,7 +222,7 @@ for message_row in cur_1 :
         try:
             row = cur.fetchone()
             sender_id = row[0]
-            senders[sender] = sender_id
+            senders[sender] = sender_id  # builds up the dict
         except:
             print('Could not retrieve sender id',sender)
             break
@@ -239,9 +238,10 @@ for message_row in cur_1 :
             print('Could not retrieve subject id',subject)
             break
     # print(sender_id, subject_id)
-    cur.execute('INSERT OR IGNORE INTO Messages (guid,sender_id,subject_id,sent_at,headers,body) VALUES ( ?,?,?,datetime(?),?,? )',
-            ( guid, sender_id, subject_id, sent_at,
-            zlib.compress(message_row[0].encode()), zlib.compress(message_row[1].encode())) )
+    cur.execute(
+        'INSERT OR IGNORE INTO Messages (guid,sender_id,subject_id,sent_at,headers,body) VALUES ( ?,?,?,datetime(?),?,? )',
+        (guid, sender_id, subject_id, sent_at,
+         zlib.compress(message_row[0].encode()), zlib.compress(message_row[1].encode())))  # compresses the text
     conn.commit()
     cur.execute('SELECT id FROM Messages WHERE guid=? LIMIT 1', ( guid, ))
     try:
